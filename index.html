@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>obj sample</title>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-assets>
+      <a-asset-item id="tree-obj" src="./objects/tree.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="./objects/tree.mtl"></a-asset-item>
+    </a-assets>
+    <a-scene>
+      <!-- Using the asset management system. -->
+      <a-entity id="model" position="10 10 0">
+        <a-obj-model src="#tree-obj" mtl="#tree-mtl"></a-obj-model
+      ></a-entity>
+      <a-camera
+        position="0 0 10"
+        rotation="0 0 0"
+        camera="userHeight: 0"
+        id="camera"
+      >
+        <a-ring
+          color="teal"
+          position="0 0 -1"
+          radius-inner="0.05"
+          radius-outer="0.07"
+        ></a-ring>
+      </a-camera>
+    </a-scene>
+  </body>
+</html>
